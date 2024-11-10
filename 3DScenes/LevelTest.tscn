@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjw7r4vkr7qp"]
+
+[ext_resource type="PackedScene" uid="uid://cjqdemoylwmro" path="res://3DScenes/PlanetScene.tscn" id="1_ot7eb"]
+
+[sub_resource type="Environment" id="Environment_u4m20"]
+background_mode = 2
+ssao_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.847048, 0, 0.531517, 0, 1, 0, -0.531517, 0, 0.847048, 0, 0, 0)
+environment = SubResource("Environment_u4m20")
+fov = 90.0
+
+[node name="Planet" parent="." instance=ExtResource("1_ot7eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.23389, -11.2741)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.256351, -0.528809, 0.809102, 0.15972, 0.848741, 0.504111, -0.953296, 1.42052e-08, 0.302037, 28.8561, 9.41197, -5.32091)
+light_energy = 3.424
+light_bake_mode = 0
+shadow_enabled = true

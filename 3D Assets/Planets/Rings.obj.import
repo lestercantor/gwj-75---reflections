@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wh466xmwt2wx"
+path="res://.godot/imported/Rings.obj-ee1d67c313de8b29aa27f9927a4f2a42.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rings.obj-ee1d67c313de8b29aa27f9927a4f2a42.mesh"]
+
+source_file="res://3D Assets/Planets/Rings.obj"
+dest_files=["res://.godot/imported/Rings.obj-ee1d67c313de8b29aa27f9927a4f2a42.mesh", "res://.godot/imported/Rings.obj-ee1d67c313de8b29aa27f9927a4f2a42.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
