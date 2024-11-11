@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8o0uju0jn7t"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_eimki"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tkws8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r64pr"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_eimki")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_tkws8")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r64pr")
