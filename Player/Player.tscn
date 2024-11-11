@@ -7,6 +7,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_r64pr"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_eimki")
 
