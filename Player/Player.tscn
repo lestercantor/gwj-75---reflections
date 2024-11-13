@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dq8o0uju0jn7t"]
+[gd_scene load_steps=21 format=3 uid="uid://dq8o0uju0jn7t"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_eimki"]
 [ext_resource type="ArrayMesh" uid="uid://dd2q640t6taxk" path="res://3D Assets/Ship/SpaceShipMain.obj" id="2_3opyr"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bmhi4615dv434" path="res://Textures/Ship/Main/SpaceShipMain_Extras_Metallic.png" id="8_xgvgp"]
 [ext_resource type="Texture2D" uid="uid://8c3sn1qy5u82" path="res://Textures/Ship/Main/SpaceShipMain_Extras_Normal.png" id="9_ea8yo"]
 [ext_resource type="Texture2D" uid="uid://cpa660ijuvsku" path="res://Textures/Ship/Main/SpaceShipMain_Extras_Roughness.png" id="10_ekewr"]
+[ext_resource type="Texture2D" uid="uid://2ddfedvitcln" path="res://Textures/Ship/Cockpit/SpaceShipCockpit_DefaultMaterial_Emissive.png" id="13_s534g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0ow0"]
 albedo_texture = ExtResource("3_si0ff")
@@ -37,8 +38,12 @@ albedo_texture = ExtResource("3_670x5")
 metallic = 1.0
 metallic_texture = ExtResource("4_bev70")
 roughness_texture = ExtResource("6_3rti6")
+emission_enabled = true
+emission_energy_multiplier = 3.34
+emission_texture = ExtResource("13_s534g")
 normal_enabled = true
 normal_texture = ExtResource("5_caaq4")
+texture_repeat = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r64pr"]
 
