@@ -1,30 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkjw7r4vkr7qp"]
+[gd_scene load_steps=8 format=3 uid="uid://dkjw7r4vkr7qp"]
 
 [ext_resource type="PackedScene" uid="uid://cjqdemoylwmro" path="res://3DScenes/PlanetScene.tscn" id="1_ot7eb"]
+[ext_resource type="Texture2D" uid="uid://dva337qyl3gtp" path="res://Textures/Skybox/panorama_image.png" id="1_py58b"]
 [ext_resource type="PackedScene" uid="uid://dq8o0uju0jn7t" path="res://Player/Player.tscn" id="2_d1nwk"]
 [ext_resource type="PackedScene" uid="uid://h6mw7ehdr16m" path="res://Asteroid/AsteroidTest.tscn" id="3_xigmu"]
 
-[sub_resource type="Environment" id="Environment_u4m20"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_krqi7"]
+panorama = ExtResource("1_py58b")
+
+[sub_resource type="Sky" id="Sky_xgwwp"]
+sky_material = SubResource("PanoramaSkyMaterial_krqi7")
+
+[sub_resource type="Environment" id="Environment_5ac3d"]
 background_mode = 2
-ssao_enabled = true
+sky = SubResource("Sky_xgwwp")
+sky_custom_fov = 90.0
+reflected_light_source = 2
 
 [node name="Node3D" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5ac3d")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
-environment = SubResource("Environment_u4m20")
 fov = 90.0
+far = 80000.0
 
 [node name="Planet" parent="." instance=ExtResource("1_ot7eb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6239, -1.23389, -103.694)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -66.2703, -6.82037, -101.978)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.918121, -0.315341, 0.240027, 0.15972, 0.848741, 0.504111, -0.362688, -0.424498, 0.829613, 16.6797, 9.41197, 22.5864)
-light_energy = 3.424
+transform = Transform3D(0.717654, -0.450484, 0.531072, 0.15972, 0.848741, 0.504111, -0.677837, -0.276955, 0.681052, 16.6797, 9.41197, 22.5864)
 light_bake_mode = 0
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_d1nwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.29323)
+ACCELERATION = 10.0
 
 [node name="Asteroid" parent="." instance=ExtResource("3_xigmu")]
 transform = Transform3D(-0.0575641, 0, -0.998342, 0, 1, 0, 0.998342, 0, -0.0575641, 3.58574, 1.82589, -8.20087)

@@ -1,26 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjqdemoylwmro"]
+[gd_scene load_steps=4 format=3 uid="uid://cjqdemoylwmro"]
 
 [ext_resource type="ArrayMesh" uid="uid://mfcnw82pyweo" path="res://3D Assets/Planets/Planet.obj" id="1_2h4vf"]
 [ext_resource type="Texture2D" uid="uid://b674khyfwyndn" path="res://Textures/Planet001/Planet_DefaultMaterial_BaseColor.png" id="2_05cgd"]
-[ext_resource type="ArrayMesh" uid="uid://wh466xmwt2wx" path="res://3D Assets/Planets/Rings.obj" id="3_y1o65"]
-[ext_resource type="Texture2D" uid="uid://30xx03ljvk8b" path="res://Textures/Rings/Rings_DefaultMaterial_BaseColor.png" id="4_yoivd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sroaq"]
 albedo_texture = ExtResource("2_05cgd")
 anisotropy = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4146"]
-transparency = 1
-cull_mode = 2
-albedo_texture = ExtResource("4_yoivd")
-
 [node name="Planet" type="Node3D"]
+transform = Transform3D(0.999975, 0.00549165, -0.00445538, -0.00546547, 0.999968, 0.00586629, 0.00448745, -0.00584179, 0.999973, 0, 0, 0)
 
 [node name="Planet" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0.000649064, -0.000188521, -0.000648992, 1, 0.000400091, 0.000188772, -0.000399973, 1, 0, 0, 0)
 mesh = ExtResource("1_2h4vf")
 surface_material_override/0 = SubResource("StandardMaterial3D_sroaq")
-
-[node name="Rings" type="MeshInstance3D" parent="Planet"]
-mesh = ExtResource("3_y1o65")
-surface_material_override/0 = SubResource("StandardMaterial3D_m4146")
