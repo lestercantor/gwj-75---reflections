@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cjqdemoylwmro" path="res://3DScenes/PlanetScene.tscn" id="1_ot7eb"]
 [ext_resource type="Texture2D" uid="uid://dva337qyl3gtp" path="res://Textures/Skybox/panorama_image.png" id="1_py58b"]
 [ext_resource type="PackedScene" uid="uid://dq8o0uju0jn7t" path="res://Player/Player.tscn" id="2_d1nwk"]
-[ext_resource type="PackedScene" uid="uid://h6mw7ehdr16m" path="res://Asteroid/AsteroidTest.tscn" id="3_xigmu"]
+[ext_resource type="PackedScene" uid="uid://u4bhs3wuu56f" path="res://Asteroid/asteroid_spawner_area.tscn" id="5_5mvot"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_krqi7"]
 panorama = ExtResource("1_py58b")
@@ -39,10 +39,5 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.29323)
 ACCELERATION = 10.0
 
-[node name="Asteroid" parent="." instance=ExtResource("3_xigmu")]
-transform = Transform3D(-0.0575641, 0, -0.998342, 0, 1, 0, 0.998342, 0, -0.0575641, 3.58574, 1.82589, -8.20087)
-direction = Vector3(-1, 0, 0)
-
-[node name="Asteroid2" parent="." instance=ExtResource("3_xigmu")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.92632, 1.70484, -8.20087)
-direction = Vector3(1, 0, 0)
+[node name="AsteroidSpawnerArea" parent="." instance=ExtResource("5_5mvot")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -20.8856)

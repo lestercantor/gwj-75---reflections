@@ -4,6 +4,7 @@ var speed: float = 5
 @export var direction: Vector3 = Vector3.BACK
 
 func _ready() -> void:
+	speed = randi_range(5, 15)
 	set_linear_velocity(speed * direction)
 
 func _on_body_entered(body: Node) -> void:

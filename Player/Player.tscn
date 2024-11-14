@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq8o0uju0jn7t"]
+[gd_scene load_steps=22 format=3 uid="uid://dq8o0uju0jn7t"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_eimki"]
 [ext_resource type="ArrayMesh" uid="uid://dd2q640t6taxk" path="res://3D Assets/Ship/SpaceShipMain.obj" id="2_3opyr"]
@@ -33,6 +33,9 @@ roughness_texture = ExtResource("10_ekewr")
 normal_enabled = true
 normal_texture = ExtResource("9_ea8yo")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p6xgd"]
+points = PackedVector3Array(-0.93759, -0.474119, 0.172958, -1.40118, 0.886657, 5.99662, 0.486779, 1.35902, 0.142096, -0.324323, -0.998297, 5.24802, 1.14825, 1.54796, 5.61858, 0.549261, -0.90852, 0.182268, -1.49558, 1.26429, 3.54087, 1.43414, -0.4788, 4.82494, -1.35304, -0.377675, 4.87264, -1.59032, 0.6035, 1.5584, 1.33704, 0.792185, 5.99662, -1.11799, 1.54796, 5.61858, 1.05385, 0.508769, -0.0472174, 1.52584, 1.26454, 3.54087, -0.429556, 1.3086, 0.268137, -0.324323, -0.998297, 0.176601, 1.80903, -0.246229, 1.93643, 0.286709, -0.903761, 5.49466, -1.35304, -0.377675, 1.76707, -0.456858, 1.0756, -0.0472174, 0.372138, -0.980896, 5.2157, 1.5037, 0.747092, 1.67117, -0.76304, -0.211976, 5.7789, 1.52584, -0.529386, 3.25749, 1.80903, -0.246229, 2.78657, -1.0102, 0.312118, 0.208316, 0.813907, -0.212139, 5.77841, -1.0392, 1.46625, 5.80984, -1.59032, 0.792444, 2.88063, 0.954095, -0.445405, 0.288806, -1.21238, 1.45349, 3.82424, -1.30678, 1.45349, 5.71324)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l6p4"]
 albedo_texture = ExtResource("3_670x5")
 metallic = 1.0
@@ -45,7 +48,9 @@ normal_enabled = true
 normal_texture = ExtResource("5_caaq4")
 texture_repeat = false
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r64pr"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8q0iy"]
+height = 1.12382
+radius = 1.05533
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 collision_layer = 2
@@ -58,9 +63,13 @@ skeleton = NodePath("../Cockpit")
 surface_material_override/0 = SubResource("StandardMaterial3D_b0ow0")
 surface_material_override/1 = SubResource("StandardMaterial3D_vje4s")
 
+[node name="MainCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_p6xgd")
+
 [node name="Cockpit" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_mheqp")
 surface_material_override/0 = SubResource("StandardMaterial3D_2l6p4")
 
-[node name="PlayerCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_r64pr")
+[node name="CockpitCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.602333)
+shape = SubResource("CylinderShape3D_8q0iy")

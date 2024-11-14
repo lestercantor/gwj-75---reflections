@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://u4bhs3wuu56f"]
+
+[ext_resource type="Script" path="res://Asteroid/AsteroidSpawner.gd" id="1_idcuq"]
+[ext_resource type="PackedScene" uid="uid://h6mw7ehdr16m" path="res://Asteroid/AsteroidTest.tscn" id="2_rd2w1"]
+
+[node name="AsteroidSpawnerArea" type="Node3D"]
+script = ExtResource("1_idcuq")
+asteroid_scene = ExtResource("2_rd2w1")
+
+[node name="TopLeftLimit" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -7)
+
+[node name="BottomRightLimit" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 7)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
